@@ -5,3 +5,5 @@
   %td= truncate(post.rationale)
   %td
     = link_to "Edit", edit_post_path(post), id: "edit_#{post.id}"
+  %td
+    = link_to "Delete", post_path(post), method: :delete, id: "delete_#{post.id}", data: {confirm: "Are you sure you want to delete this?"}
