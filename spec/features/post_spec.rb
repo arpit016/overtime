@@ -51,6 +51,14 @@ describe 'navigate' do
       end
    end
    
+   describe 'new' do
+      it "can be reached from home page" do
+         visit root_path
+         click_link("new_entry_from_nav")
+         expect(page.status_code).to eq(200)
+      end
+   end
+   
    describe 'edit' do
       before do
          @post = FactoryGirl.create(:post)
